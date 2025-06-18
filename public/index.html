@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TastyBites - Customer Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen">
+      <img src="logo.png" alt="TastyBites Logo" class="logo" />
+      <h1 class="title">Welcome to TastyBites</h1>
+      <div class="button-group">
+        <button onclick="showAddCustomer()">Add New Customer</button>
+        <button onclick="showCustomerList()">View Current Customers</button>
+      </div>
+    </div>
+
+    <!-- Add Customer Form -->
+    <div id="addCustomerSection" style="display: none;">
+      <h2 class="title">Add Customer Profile</h2>
+      <form id="customerForm">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" required />
+
+        <label for="surname">Surname</label>
+        <input type="text" name="surname" id="surname" required />
+
+        <label for="middleName">Middle Name</label>
+        <input type="text" name="middleName" id="middleName" />
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" id="dob" required />
+
+        <label for="homeAddress">Home Address</label>
+        <input type="text" name="homeAddress" id="homeAddress" required />
+
+        <label for="registrationDate">Date of Registration</label>
+        <input type="date" name="registrationDate" id="registrationDate" required />
+
+        <button type="submit">Save Customer</button>
+      </form>
+      <button onclick="returnHome()">Back to Home</button>
+    </div>
+
+    <!-- Customer List & Orders -->
+    <div id="customerSection" style="display: none;">
+      <h2 class="title">Customer List</h2>
+      <div id="customerList"></div>
+      <button onclick="returnHome()">Back to Home</button>
+    </div>
+
+    <!-- Order Form -->
+    <div id="orderFormSection" style="display: none;">
+      <h2 class="title">Add Order for Customer</h2>
+      <form id="orderForm">
+        <label for="orderDate">Order Date</label>
+        <input type="date" name="orderDate" id="orderDate" required />
+
+        <label for="menuItem">Menu Item Ordered</label>
+        <input type="text" name="menuItem" id="menuItem" required />
+
+        <label for="instructions">Special Instructions</label>
+        <input type="text" name="instructions" id="instructions" />
+
+        <label for="paymentMethod">Payment Method</label>
+        <select name="paymentMethod" id="paymentMethod" required>
+          <option value="">Select</option>
+          <option value="Cash">Cash</option>
+          <option value="Card">Card</option>
+          <option value="Mobile">Mobile</option>
+        </select>
+
+        <label for="reservationDate">Next Reservation Date</label>
+        <input type="date" name="reservationDate" id="reservationDate" />
+
+        <button type="submit">Save Order</button>
+      </form>
+      <button onclick="showCustomerList()">Back to Customers</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

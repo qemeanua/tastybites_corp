@@ -1,0 +1,114 @@
+{
+  "customers": [
+    {
+      "firstName": "Zoey",
+      "surname": "Adams",
+      "middleName": "Tanisha",
+      "dob": "2005-12-05",
+      "homeAddress": "Carlsville Estate",
+      "registrationDate": "2025-05-27",
+      "id": "c794"
+    },
+    {
+      "firstName": "Nonye",
+      "surname": "Janan",
+      "middleName": "Zo",
+      "dob": "2016-01-06",
+      "homeAddress": "89 Zoty Gardens",
+      "registrationDate": "2025-06-17",
+      "id": "337a"
+    },
+    {
+      "id": "1abc",
+      "firstName": "Emerald",
+      "surname": "Michael",
+      "middleName": "Zhoey",
+      "dob": "2000-10-28",
+      "homeAddress": "A23 Pearl Gardens, Lekki Lagos",
+      "registrationDate": "2025-06-20"
+    },
+    {
+      "id": "141a",
+      "firstName": "Debola",
+      "surname": "Akin",
+      "middleName": "Jessica",
+      "dob": "2004-10-20",
+      "homeAddress": "Carlsville Estate",
+      "registrationDate": "2025-06-17"
+    },
+    {
+      "firstName": "Botimi",
+      "surname": "Tiemo",
+      "middleName": "Deborah",
+      "dob": "2007-01-25",
+      "homeAddress": "ikeja",
+      "registrationDate": "2025-06-17",
+      "id": "609f"
+    },
+    {
+      "firstName": "Fatimah",
+      "surname": "Raji",
+      "middleName": "Adenike",
+      "dob": "2005-11-19",
+      "homeAddress": "5c Bolaji Bakare Illupeju,Lagos",
+      "registrationDate": "2025-06-17",
+      "id": "eb04"
+    }
+  ],
+  "orders": [
+    {
+      "id": "2267",
+      "customerId": "c794",
+      "orderDate": "2025-06-18",
+      "menuItem": "Chicken Pepper Soup",
+      "instructions": "No onions, Should be moderately spiced",
+      "paymentMethod": "Card",
+      "reservationDate": "2025-06-18"
+    },
+    {
+      "id": "8ef9",
+      "customerId": "1abc",
+      "orderDate": "2025-06-17",
+      "menuItem": "Fried and Chicken Wings , 1 bottle of Chapman ",
+      "instructions": "Extra Salty Fries",
+      "paymentMethod": "Cash",
+      "reservationDate": ""
+    },
+    {
+      "id": "1f6a",
+      "customerId": "141a",
+      "orderDate": "2025-06-17",
+      "menuItem": "Jollof Rice and Turkey",
+      "instructions": "Not Spicy",
+      "paymentMethod": "Card",
+      "reservationDate": "2025-10-20"
+    },
+    {
+      "id": "ed3a",
+      "customerId": "c794",
+      "orderDate": "2025-06-10",
+      "menuItem": "Loaded Fries",
+      "instructions": "",
+      "paymentMethod": "Card",
+      "reservationDate": ""
+    },
+    {
+      "id": "6703",
+      "customerId": "609f",
+      "orderDate": "2025-06-17",
+      "menuItem": "Burger",
+      "instructions": "Extra cheese",
+      "paymentMethod": "Mobile",
+      "reservationDate": ""
+    },
+    {
+      "id": "d21d",
+      "customerId": "eb04",
+      "orderDate": "2025-06-17",
+      "menuItem": "Chicken Cutlet and Celery",
+      "instructions": "Make the Celery tasty and not too soft",
+      "paymentMethod": "Mobile",
+      "reservationDate": ""
+    }
+  ]
+}
