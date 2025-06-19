@@ -31,58 +31,53 @@ form {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Use form-row flex container for inputs and buttons side by side */
-.form-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
 form label {
   display: block;
   margin: 10px 0 5px;
+  font-weight: bold;
 }
 
-form input, form select {
+form input,
+form select {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
+  font-size: 16px;
+  background-color: #f9f9f9;
 }
 
+/* Ensure all inputs (including date) are visually identical */
 form input[type="date"] {
-  width: auto;
-  min-width: 180px;
-  padding: 8px;
-  box-sizing: border-box;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
+/* Button styling */
 button {
-  padding: 10px 15px;
-  margin-top: 10px;
+  padding: 12px 20px;
   background: #ff6600;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  white-space: nowrap;
-  display: inline-block;
-  vertical-align: middle;
+  font-size: 16px;
+  width: 100%;
 }
 
 button:hover {
   background: #e65c00;
 }
 
+/* Button group (for welcome screen) */
 .button-group {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 15px;
   margin-top: 20px;
 }
 
@@ -95,7 +90,9 @@ button:hover {
 }
 
 .customer-card button {
-  margin-right: 10px;
+  margin: 8px 8px 0 0;
+  width: auto;
+  display: inline-block;
 }
 
 .order-history {
@@ -109,4 +106,20 @@ button:hover {
   border-bottom: 1px dashed #aaa;
   padding-bottom: 5px;
   margin-bottom: 5px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  form input,
+  form select {
+    font-size: 16px;
+  }
 }
