@@ -1,15 +1,6 @@
 {
   "customers": [
     {
-      "firstName": "Zoey",
-      "surname": "Adams",
-      "middleName": "Tanisha",
-      "dob": "2005-12-05",
-      "homeAddress": "Carlsville Estate",
-      "registrationDate": "2025-05-27",
-      "id": "c794"
-    },
-    {
       "firstName": "Nonye",
       "surname": "Janan",
       "middleName": "Zo",
@@ -58,7 +49,7 @@
   "orders": [
     {
       "id": "2267",
-      "customerId": "c794",
+      "customerId": null,
       "orderDate": "2025-06-18",
       "menuItem": "Chicken Pepper Soup",
       "instructions": "No onions, Should be moderately spiced",
@@ -85,7 +76,7 @@
     },
     {
       "id": "ed3a",
-      "customerId": "c794",
+      "customerId": null,
       "orderDate": "2025-06-10",
       "menuItem": "Loaded Fries",
       "instructions": "",
