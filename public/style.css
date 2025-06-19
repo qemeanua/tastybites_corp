@@ -34,53 +34,50 @@ form {
 form label {
   display: block;
   margin: 10px 0 5px;
-  font-weight: bold;
 }
 
 form input,
 form select {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 10px;
   box-sizing: border-box;
-  font-size: 16px;
-  background-color: #f9f9f9;
 }
 
-/* Ensure all inputs (including date) are visually identical */
-form input[type="date"] {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-/* Button styling */
 button {
-  padding: 12px 20px;
+  padding: 10px 20px;
   background: #ff6600;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  width: 100%;
 }
 
 button:hover {
   background: #e65c00;
 }
 
-/* Button group (for welcome screen) */
+/* Home screen buttons (always side-by-side) */
 .button-group {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: center;
+  gap: 20px;
   margin-top: 20px;
+  flex-wrap: nowrap;
 }
 
+.button-group button {
+  flex: 1;
+  max-width: 200px;
+}
+
+/* Form buttons like Save/Back should not stretch full width */
+form button {
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Customer Cards */
 .customer-card {
   background: #fff3e0;
   padding: 15px;
@@ -90,9 +87,7 @@ button:hover {
 }
 
 .customer-card button {
-  margin: 8px 8px 0 0;
-  width: auto;
-  display: inline-block;
+  margin-right: 10px;
 }
 
 .order-history {
@@ -106,20 +101,4 @@ button:hover {
   border-bottom: 1px dashed #aaa;
   padding-bottom: 5px;
   margin-bottom: 5px;
-}
-
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .button-group {
-    flex-direction: column;
-  }
-
-  button {
-    width: 100%;
-  }
-
-  form input,
-  form select {
-    font-size: 16px;
-  }
 }
