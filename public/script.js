@@ -70,18 +70,38 @@ async function fetchCustomers() {
           const orderRes = await fetch(`${API_URL}/orders?customerId=${customer.id}`);
           const orders = await orderRes.json();
 
+          orderHistoryDiv.innerHTML = '';
+
           if (orders.length === 0) {
             orderHistoryDiv.innerHTML = '<p>No orders found.</p>';
           } else {
-            orderHistoryDiv.innerHTML = '<strong>Order History:</strong>';
+            const header = document.createElement('strong');
+            header.textContent = 'Order History:';
+            orderHistoryDiv.appendChild(header);
+
             orders.forEach(order => {
-              orderHistoryDiv.innerHTML += `
-                <div class="order-entry">
-                  <p><em>${order.orderDate}</em> - ${order.menuItem} (${order.paymentMethod})</p>
-                  <p>${order.instructions}</p>
-                  <button onclick="deleteOrder(${order.id})">Delete Order</button>
-                </div>
-              `;
+              const orderEntry = document.createElement('div');
+              orderEntry.className = 'order-entry';
+
+              const dateLine = document.createElement('p');
+              dateLine.innerHTML = `<em>${order.orderDate}</em> - ${order.menuItem} (${order.paymentMethod})`;
+
+              const instructions = document.createElement('p');
+              instructions.textContent = order.instructions;
+
+              const delOrderBtn = document.createElement('button');
+              delOrderBtn.textContent = 'Delete Order';
+              delOrderBtn.addEventListener('click', async () => {
+                if (confirm('Delete this order?')) {
+                  await deleteOrder(order.id);
+                  toggleHistoryBtn.click(); // Refresh view
+                }
+              });
+
+              orderEntry.appendChild(dateLine);
+              orderEntry.appendChild(instructions);
+              orderEntry.appendChild(delOrderBtn);
+              orderHistoryDiv.appendChild(orderEntry);
             });
           }
 
@@ -184,15 +204,12 @@ orderForm.onsubmit = async (e) => {
 };
 
 async function deleteOrder(orderId) {
-  if (confirm('Delete this order?')) {
-    try {
-      await fetch(`${API_URL}/orders/${orderId}`, {
-        method: 'DELETE',
-      });
-      fetchCustomers();
-    } catch (err) {
-      console.error('Error deleting order:', err);
-    }
+  try {
+    await fetch(`${API_URL}/orders/${orderId}`, {
+      method: 'DELETE',
+    });
+  } catch (err) {
+    console.error('Error deleting order:', err);
   }
 }
 
